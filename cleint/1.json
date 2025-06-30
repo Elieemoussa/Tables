@@ -1,0 +1,30 @@
+[
+  {
+    "number": 1,
+    "name": "Sarah Moussa",
+    "table": 4,
+    "familyCount": 5,
+    "side": "bride"
+  },
+  {
+    "number": 2,
+    "name": "Ahmad Mansour",
+    "table": 7,
+    "familyCount": 2,
+    "side": "groom"
+  },
+  {
+    "number": 3,
+    "name": "Jad Rahme",
+    "table": 2,
+    "familyCount": 1,
+    "side": "bride"
+  },
+  {
+    "number": 4,
+    "name": "Layla Barakat",
+    "table": 3,
+    "familyCount": 3,
+    "side": "groom"
+  }
+]

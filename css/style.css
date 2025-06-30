@@ -1,0 +1,35 @@
+body {
+  background: #f8f9fa;
+}
+
+.result-card {
+  margin-top: 2rem;
+}
+
+.card {
+  border-radius: 18px;
+}
+
+.bride {
+  background-color: #f9e5ea;
+}
+
+.groom {
+  background-color: #e5f6fa;
+}
+
+h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  .card {
+    padding: 1rem !important;
+  }
+}
