@@ -1,35 +1,123 @@
 body {
-  background: #f8f9fa;
-}
-
-.result-card {
-  margin-top: 2rem;
-}
-
-.card {
-  border-radius: 18px;
-}
-
-.bride {
-  background-color: #f9e5ea;
-}
-
-.groom {
-  background-color: #e5f6fa;
-}
-
-h1 {
+  min-height: 100vh;
+  /* Add this for vertical centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Your existing styles... */
+  background: linear-gradient(120deg, #f9e5ea 0%, #e5f6fa 100%);
   font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 2.5rem;
+}
+
+
+.journey-step {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.86);
+  border-radius: 24px;
+  box-shadow: 0 8px 36px 0 rgba(44, 62, 80, 0.11);
+  padding: 2.3rem 2rem 2.1rem 2rem;
+}
+
+.btn-bride {
+  background: linear-gradient(90deg,#f9c2d0 30%, #f9e5ea 100%);
+  color: #ad2462;
   font-weight: bold;
-  letter-spacing: 1px;
+  border: none;
+  border-radius: 40px;
+  padding: 0.9rem 2.2rem;
+  box-shadow: 0 2px 12px #f9c2d0a9;
+  transition: 0.2s;
+}
+.btn-bride:hover {
+  background: #fbeff4;
+  color: #ae2b6e;
+}
+
+.btn-groom {
+  background: linear-gradient(90deg, #b4e0f2 20%, #e5f6fa 100%);
+  color: #185977;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  padding: 0.9rem 2.2rem;
+  box-shadow: 0 2px 12px #b4e0f2a7;
+  transition: 0.2s;
+}
+.btn-groom:hover {
+  background: #e8f9fe;
+  color: #1777ae;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 370px;
+}
+
+.search-bar {
+  width: 100%;
+  border-radius: 40px;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  background: rgba(255,255,255,0.68);
+  box-shadow: 0 2px 16px rgba(195,195,195,0.11);
+  outline: none;
+  transition: box-shadow .2s;
+}
+
+.search-bar:focus {
+  box-shadow: 0 4px 24px #f6b1dcb4;
+  border: 1.5px solid #f6b1dc;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1.05rem;
+  transform: translateY(-50%);
+  color: #c79bb4;
+  font-size: 1.3rem;
+  pointer-events: none;
+}
+
+#resultStep .card {
+  border-radius: 18px;
+  margin-top: 1.3rem;
+  margin-bottom: 0.7rem;
+  padding: 1.8rem 1.3rem;
+  font-size: 1.15rem;
+}
+
+#resultStep .bride {
+  background: linear-gradient(110deg, #f9e5ea 60%, #fcebf1 100%);
+}
+
+#resultStep .groom {
+  background: linear-gradient(110deg, #e5f6fa 60%, #eafaff 100%);
+}
+
+#resultStep h3 {
+  color: #a14b7c;
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#resultStep .badge {
+  font-size: 1.12rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
 }
 
 @media (max-width: 600px) {
-  h1 {
-    font-size: 1.7rem;
+  .journey-step {
+    padding: 1.1rem 0.5rem 1.4rem 0.5rem;
+    max-width: 97vw;
   }
-  .card {
-    padding: 1rem !important;
+  #resultStep .card {
+    padding: 1rem 0.4rem;
   }
 }
