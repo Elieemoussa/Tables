@@ -19,6 +19,25 @@ document.querySelectorAll('[data-side]').forEach(btn => {
   });
 });
 
+// Step 2: Search Bar Enter
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const input = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!input) return;
+
+  // Search guests: same side & (name startsWith OR number match)
+  let matchedGuests = [];
+  if (!isNaN(input)) {
+    matchedGuests = guests.filter(g => g.side === selectedSide && g.number.toString() === input);
+  } else {
+    matchedGuests = guests.filter(g => g.side === selectedSide && g.name.toLowerCase().startsWith(input));
+  }
+
+  document.getElementById('searchStep').classList.add('d-none');
+  showResult(matchedGuests, input);
+});
+
+
 const searchInput = document.getElementById('searchInput');
 const suggestionList = document.getElementById('suggestionList');
 
@@ -26,23 +45,24 @@ searchInput.addEventListener('input', function () {
   const value = this.value.trim().toLowerCase();
   suggestionList.innerHTML = '';
 
-  // Only show suggestions if side selected and input not empty
+  // Only suggest if user typed something and side is chosen
   if (!value || !selectedSide) {
     suggestionList.style.display = 'none';
     return;
   }
 
-  // Find up to 6 matches (name starts with input, on selected side)
-  const filtered = guests
+  // Find up to 6 matching names (case-insensitive)
+  const suggestions = guests
     .filter(g => g.side === selectedSide && g.name.toLowerCase().startsWith(value))
     .slice(0, 6);
 
-  if (filtered.length === 0) {
+  if (suggestions.length === 0) {
     suggestionList.style.display = 'none';
     return;
   }
 
-  filtered.forEach(g => {
+  // Build and display suggestion items
+  suggestions.forEach(g => {
     const item = document.createElement('div');
     item.className = 'list-group-item list-group-item-action';
     item.textContent = g.name;
@@ -50,7 +70,7 @@ searchInput.addEventListener('input', function () {
       searchInput.value = g.name;
       suggestionList.innerHTML = '';
       suggestionList.style.display = 'none';
-      // Optional: Submit immediately
+      // Optional: auto-submit after choosing a name
       document.getElementById('searchForm').dispatchEvent(new Event('submit'));
     };
     suggestionList.appendChild(item);
@@ -59,9 +79,9 @@ searchInput.addEventListener('input', function () {
   suggestionList.style.display = 'block';
 });
 
-// Hide suggestions on blur
+// Hide suggestions when input loses focus
 searchInput.addEventListener('blur', () => {
-  setTimeout(() => suggestionList.style.display = 'none', 150);
+  setTimeout(() => suggestionList.style.display = 'none', 120);
 });
 searchInput.addEventListener('focus', function() {
   if (this.value.trim() && suggestionList.children.length) {
