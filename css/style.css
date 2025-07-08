@@ -190,3 +190,9 @@ body {
   background: #f9c2d033;
   color: #a73067;
 }
+
+
+#tableMapImage {
+  max-width: 100%;
+  height: auto;
+}
