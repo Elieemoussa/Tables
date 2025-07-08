@@ -47,3 +47,5 @@ function renderGuestList() {
     makeList("Groom Side", "طرف العريس", groomGuests, "primary");
 }
 
+
+
