@@ -172,3 +172,21 @@ body {
   from { opacity: 1;}
   to { opacity: 0;}
 }
+
+
+#suggestionList {
+  max-height: 180px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(195,195,195,0.16);
+}
+#suggestionList .list-group-item {
+  cursor: pointer;
+  padding: 0.65rem 1rem;
+  font-size: 1.05em;
+}
+#suggestionList .list-group-item:hover,
+#suggestionList .list-group-item.active {
+  background: #f9c2d033;
+  color: #a73067;
+}

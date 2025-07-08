@@ -1,6 +1,8 @@
 let guests = [];
 let selectedSide = null;
 
+
+
 // Fetch guests from JSON
 fetch('/cleint/1.json')
   .then(response => response.json())
@@ -17,23 +19,56 @@ document.querySelectorAll('[data-side]').forEach(btn => {
   });
 });
 
-// Step 2: Search Bar Enter
-document.getElementById('searchForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const input = document.getElementById('searchInput').value.trim().toLowerCase();
-  if (!input) return;
+const searchInput = document.getElementById('searchInput');
+const suggestionList = document.getElementById('suggestionList');
 
-  // Search guests: same side & (name startsWith OR number match)
-  let matchedGuests = [];
-  if (!isNaN(input)) {
-    matchedGuests = guests.filter(g => g.side === selectedSide && g.number.toString() === input);
-  } else {
-    matchedGuests = guests.filter(g => g.side === selectedSide && g.name.toLowerCase().startsWith(input));
+searchInput.addEventListener('input', function () {
+  const value = this.value.trim().toLowerCase();
+  suggestionList.innerHTML = '';
+
+  // Only show suggestions if side selected and input not empty
+  if (!value || !selectedSide) {
+    suggestionList.style.display = 'none';
+    return;
   }
 
-  document.getElementById('searchStep').classList.add('d-none');
-  showResult(matchedGuests, input);
+  // Find up to 6 matches (name starts with input, on selected side)
+  const filtered = guests
+    .filter(g => g.side === selectedSide && g.name.toLowerCase().startsWith(value))
+    .slice(0, 6);
+
+  if (filtered.length === 0) {
+    suggestionList.style.display = 'none';
+    return;
+  }
+
+  filtered.forEach(g => {
+    const item = document.createElement('div');
+    item.className = 'list-group-item list-group-item-action';
+    item.textContent = g.name;
+    item.onclick = () => {
+      searchInput.value = g.name;
+      suggestionList.innerHTML = '';
+      suggestionList.style.display = 'none';
+      // Optional: Submit immediately
+      document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+    };
+    suggestionList.appendChild(item);
+  });
+
+  suggestionList.style.display = 'block';
 });
+
+// Hide suggestions on blur
+searchInput.addEventListener('blur', () => {
+  setTimeout(() => suggestionList.style.display = 'none', 150);
+});
+searchInput.addEventListener('focus', function() {
+  if (this.value.trim() && suggestionList.children.length) {
+    suggestionList.style.display = 'block';
+  }
+});
+
 
 // Step 3: Show Result Only
 function showResult(matches, searchVal) {

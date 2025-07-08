@@ -35,12 +35,13 @@
       Search Your Name or Number<br>
       <span dir="rtl" class="arabic-label">ابحث عن اسمك أو رقمك</span>
     </h2>
-    <form id="searchForm" autocomplete="on">
+    <form id="searchForm" autocomplete="off">
       <div class="search-bar-wrapper mx-auto">
         <span class="search-icon">
           <i class="bi bi-search"></i>
         </span>
         <input type="text" id="searchInput" class="form-control search-bar" placeholder="Enter your full name or guest number..." autofocus required>
+        <div id="suggestionList" class="list-group position-absolute w-100 mt-1" style="z-index:10;"></div>
       </div>
     </form>
   </div>
