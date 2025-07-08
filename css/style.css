@@ -140,6 +140,14 @@ body {
   font-family: 'Cairo', 'Amiri', Arial, sans-serif; /* Add a web Arabic font */
 }
 
+.arabic-label {
+  font-size: 0.93em;
+  color: #929292;
+  font-family: 'Cairo', 'Amiri', Arial, sans-serif;
+  display: block;
+  margin-top: 1px;
+}
+
 .dual-label {
   display: flex;
   justify-content: space-between;
@@ -149,3 +157,18 @@ body {
   width: 48%;
 }
 
+.fade-in {
+  animation: fadeIn 0.3s;
+}
+.fade-out {
+  animation: fadeOut 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+@keyframes fadeOut {
+  from { opacity: 1;}
+  to { opacity: 0;}
+}

@@ -35,7 +35,7 @@
       Search Your Name or Number<br>
       <span dir="rtl" class="arabic-label">ابحث عن اسمك أو رقمك</span>
     </h2>
-    <form id="searchForm" autocomplete="off">
+    <form id="searchForm" autocomplete="on">
       <div class="search-bar-wrapper mx-auto">
         <span class="search-icon">
           <i class="bi bi-search"></i>
@@ -45,11 +45,15 @@
     </form>
   </div>
 
-    <div class="text-center mt-4">
-      <a href="setRetryButton()" id="retryBtn" style="color:#6c757d;text-decoration:underline;font-size:1rem;">
-        <i class="bi bi-arrow-clockwise me-1"></i>Not you? Search again
-      </a>
-    </div>
+<div class="text-center mt-4 d-none" id="retryBtnWrapper">
+  <button class="btn btn-outline-secondary" id="retryBtn" type="button">
+    <i class="bi bi-arrow-clockwise me-1"></i>
+    Not you? Search again<br>
+    <span dir="rtl" class="arabic-label">ليس أنت؟ ابحث مرة أخرى</span>
+  </button>
+</div>
+
+
 
 
   <div id="resultStep" class="journey-step d-none"></div>
