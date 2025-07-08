@@ -47,7 +47,13 @@ function showResult(matches, searchVal) {
         Sorry, no match found on the ${selectedSide === 'bride' ? "Bride" : "Groom"}'s side.<br>
         Please check your entry.
       </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-secondary" id="retryBtn">
+          <i class="bi bi-arrow-clockwise me-1"></i>Not you? Search again
+        </button>
+      </div>
     `;
+    setRetryButton();
     return;
   }
 
@@ -73,4 +79,28 @@ function showResult(matches, searchVal) {
       </div>
     `;
   });
+
+  // Add the static "Not you? Search again" button
+  resultStep.innerHTML += `
+    <div class="text-center mt-4">
+      <button class="btn btn-outline-secondary" id="retryBtn">
+        <i class="bi bi-arrow-clockwise me-1"></i>Not you? Search again
+      </button>
+    </div>
+  `;
+
+  setRetryButton();
+}
+
+// Add this helper function to handle the retry button
+function setRetryButton() {
+  const retryBtn = document.getElementById('retryBtn');
+  if (retryBtn) {
+    retryBtn.onclick = () => {
+      document.getElementById('resultStep').classList.add('d-none');
+      document.getElementById('searchStep').classList.add('d-none');
+      document.getElementById('sideStep').classList.remove('d-none');
+      selectedSide = null;
+    };
+  }
 }
