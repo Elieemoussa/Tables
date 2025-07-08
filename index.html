@@ -13,8 +13,12 @@
 <body>
 
     <button id="tableMapBtn" class="btn btn-outline-secondary position-absolute top-0 start-0 m-3" style="z-index:20;">
-    <i class="bi bi-map"></i> Table Map
-  </button>
+      <i class="bi bi-map"></i> Table Map
+    </button>
+    <button id="guestListBtn" class="btn btn-outline-secondary position-absolute top-0 end-0 m-3" style="z-index:20;">
+      <i class="bi bi-people"></i> Guest List
+    </button>
+
 
   <div id="sideStep" class="journey-step">
       <h1 class="mb-4 text-center">
@@ -72,6 +76,21 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="guestListModal" tabindex="-1" aria-labelledby="guestListLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header">
+        <h5 class="modal-title" id="guestListLabel">Guest List</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row" id="guestListBody">
+        <!-- JS will render the lists here -->
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <div id="resultStep" class="journey-step d-none"></div>
