@@ -36,7 +36,7 @@ body {
 
 
 .btn-bride {
-  background: linear-gradient(90deg,#ebdfce 30%, #c9ccb1 100%);
+  background: linear-gradient(90deg,#ebdfce 30%, #ebdfce 100%);
   color: white;
   font-weight: bold;
   border:none;
