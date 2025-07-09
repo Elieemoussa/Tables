@@ -34,17 +34,22 @@ body {
   color: black !important;
   font-family: 'quiver-bold' !important;
 }
+
 #guestListBtn{
- color: white;
+ color: #ebdfce;
+ background-color: white;
  font-family: 'marlet','Segoe UI', Arial, sans-serif;
  border-color: white;
+ border-radius: 20px;
 }
 
 
 #tableMapBtn{
- color: white;
- font-family: 'marlet','Segoe UI', Arial, sans-serif;
+ color: #ebdfce;
+ background-color: white;
+ font-family: 'marlet', Arial, sans-serif;
  border-color: white;
+ border-radius: 20px;
 }
 
 .btn-bride {
