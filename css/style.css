@@ -1,3 +1,5 @@
+@import url('/media/fonts.css');
+
 body {
   min-height: 100vh;
   /* Add this for vertical centering */
@@ -5,7 +7,8 @@ body {
   align-items: center;
   justify-content: center;
   /* Your existing styles... */
-  background: linear-gradient(120deg, #f9e5ea 0%, #e5f6fa 100%);
+  /* background: linear-gradient(120deg, #f9e5ea 0%, #e5f6fa 100%); */
+  background: #b3b792;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
@@ -14,40 +17,53 @@ body {
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.86);
-  border-radius: 24px;
-  box-shadow: 0 8px 36px 0 rgba(44, 62, 80, 0.11);
+  background: rgba(255, 255, 255, 0.842);  /* semi-transparent for visible blur */
+  border-radius: 100px 25px 100px 25px;
+  box-shadow: 0 8px 36px 0 rgba(255, 255, 255, 0.233);
   padding: 2.3rem 2rem 2.1rem 2rem;
+  /* --- Blur effect --- */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* for Safari */
+}
+.s1{
+  color: rgb(0, 0, 0);
+  font-family: 'marlet','Segoe UI', Arial, sans-serif;
 }
 
+.s1-ar{
+  color: white;
+}
+
+
 .btn-bride {
-  background: linear-gradient(90deg,#f9c2d0 30%, #f9e5ea 100%);
-  color: #ad2462;
+  background: linear-gradient(90deg,#b3b792 30%, #c9ccb1 100%);
+  color: white;
   font-weight: bold;
-  border: none;
-  border-radius: 40px;
+  border:none;
+  border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #f9c2d0a9;
+  box-shadow: 0 2px 12px #b3b792a2;
   transition: 0.2s;
 }
 .btn-bride:hover {
-  background: #fbeff4;
-  color: #ae2b6e;
+  background: white;
+  color: #b3b792;
 }
 
+
 .btn-groom {
-  background: linear-gradient(90deg, #b4e0f2 20%, #e5f6fa 100%);
-  color: #185977;
+  background: linear-gradient(90deg,#b3b792 30%, #c9ccb1 100%);
+  color: white; 
   font-weight: bold;
-  border: none;
-  border-radius: 40px;
+  border:none;
+  border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #b4e0f2a7;
+  box-shadow: 0 2px 12px #b3b792a2;
   transition: 0.2s;
 }
 .btn-groom:hover {
-  background: #e8f9fe;
-  color: #1777ae;
+  background: white;
+  color: #b3b792;
 }
 
 .search-bar-wrapper {
@@ -195,4 +211,11 @@ body {
 #tableMapImage {
   max-width: 100%;
   height: auto;
+}
+
+
+@media (min-width: 1200px) {
+    .h1, h1 {
+        font-size: 2.1rem;
+    }
 }
