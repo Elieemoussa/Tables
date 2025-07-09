@@ -36,13 +36,13 @@ body {
 
 
 .btn-bride {
-  background: linear-gradient(90deg,#b3b792 30%, #c9ccb1 100%);
+  background: linear-gradient(90deg,#ebdfce 30%, #c9ccb1 100%);
   color: white;
   font-weight: bold;
   border:none;
   border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #b3b792a2;
+  box-shadow: 0 2px 12px #ebdfcec0;
   transition: 0.2s;
 }
 .btn-bride:hover {
@@ -52,13 +52,13 @@ body {
 
 
 .btn-groom {
-  background: linear-gradient(90deg,#b3b792 30%, #c9ccb1 100%);
+  background: linear-gradient(90deg,#ebdfce 30%, #c9ccb1 100%);
   color: white; 
   font-weight: bold;
   border:none;
   border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #b3b792a2;
+  box-shadow: 0 2px 12px #ebdfcec0;
   transition: 0.2s;
 }
 .btn-groom:hover {
