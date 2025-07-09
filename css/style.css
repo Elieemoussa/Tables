@@ -90,15 +90,15 @@ body {
   border: none;
   font-size: 1.25rem;
   padding: 0.8rem 1rem 0.8rem 2.8rem;
-  background: rgba(255,255,255,0.68);
+  background: rgba(201, 204, 177, 0.774);
   box-shadow: 0 2px 16px rgba(195,195,195,0.11);
   outline: none;
   transition: box-shadow .2s;
 }
 
 .search-bar:focus {
-  box-shadow: 0 4px 24px #f6b1dcb4;
-  border: 1.5px solid #f6b1dc;
+  box-shadow: 0 4px 24px #c9ccb1;
+  border: 1.5px solid #c9ccb1;
 }
 
 .search-icon {
@@ -106,7 +106,7 @@ body {
   top: 50%;
   left: 1.05rem;
   transform: translateY(-50%);
-  color: #c79bb4;
+  color: #c9ccb1;
   font-size: 1.3rem;
   pointer-events: none;
 }
