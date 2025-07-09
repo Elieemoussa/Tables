@@ -15,7 +15,7 @@ body {
 
 .journey-step {
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.842);  /* semi-transparent for visible blur */
   border-radius: 100px 25px 100px 25px;
@@ -214,7 +214,7 @@ body {
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
     .h1, h1 {
         font-size: 2.1rem;
     }
