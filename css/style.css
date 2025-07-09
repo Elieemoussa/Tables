@@ -31,9 +31,21 @@ body {
 }
 
 .s1-ar{
-  color: white;
+  color: black !important;
+  font-family: 'quiver-bold' !important;
+}
+#guestListBtn{
+ color: white;
+ font-family: 'marlet','Segoe UI', Arial, sans-serif;
+ border-color: white;
 }
 
+
+#tableMapBtn{
+ color: white;
+ font-family: 'marlet','Segoe UI', Arial, sans-serif;
+ border-color: white;
+}
 
 .btn-bride {
   background: #ebdfce;
