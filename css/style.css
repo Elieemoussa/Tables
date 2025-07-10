@@ -36,20 +36,20 @@ body {
 }
 
 #guestListBtn{
- color: white;
- background-color: #797979;
+ color: #797979;
+ background-color: white;
  font-family: 'marlet','Segoe UI', Arial, sans-serif;
  box-shadow: 0 2px 12px #797979;
-border-color: #797979;
+ border-color:  white;
  border-radius: 20px;
 }
 
 
 #tableMapBtn{
- color: white;
- background-color: #797979;
+ color: #797979;
+ background-color: white;
  font-family: 'marlet', Arial, sans-serif;
- border-color: #797979;
+ border-color:  white;
  border-radius: 20px;
  box-shadow: 0 2px 12px #797979;
 
