@@ -62,11 +62,6 @@ body {
   box-shadow: 0 2px 12px rgb(212, 214, 197);
   transition: 0.2s;
 }
-.btn-bride:hover {
-  background: white;
-  color: #b3b792;
-}
-
 
 .btn-groom {
   background:#6a9c89;
@@ -78,10 +73,7 @@ body {
   box-shadow: 0 2px 12px rgb(170, 172, 158);
   transition: 0.2s;
 }
-.btn-groom:hover {
-  background: white;
-  color: #b3b792;
-}
+
 
 .search-bar-wrapper {
   position: relative;
