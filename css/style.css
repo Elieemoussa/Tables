@@ -162,6 +162,12 @@ body {
   #resultStep .card {
     padding: 1rem 0.4rem;
   }
+    .btn-bride{
+      font-size: 0.8rem;
+    }
+    .btn-groom{
+      font-size: 0.8rem;
+    }
 }
 
 [dir="rtl"] {
