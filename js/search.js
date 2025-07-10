@@ -78,15 +78,16 @@ export function showResult(matches, searchVal) {
     return;
   }
   matches.forEach(guest => {
+      const badgeClass = guest.side === 'bride' ? 'badge-bride' : 'badge-groom';
     resultStep.innerHTML += `
       <div class="card shadow ${guest.side}">
         <h3 class="mb-3">${guest.name}</h3>
         <ul class="list-group list-group-flush mb-3">
-          <li class="list-group-item"><strong>Table:</strong> ${guest.table}</li>
-          <li class="list-group-item"><strong>Guest Count:</strong> ${guest.familyCount}</li>
+          <li class="list-group-item result-item "><strong>Table:</strong> ${guest.table}</li>
+          <li class="list-group-item result-item"><strong>Guest Count:</strong> ${guest.familyCount}</li>
         </ul>
-        <div class="text-center">
-          <span class="badge bg-${guest.side === 'bride' ? 'danger' : 'primary'}">
+        <div class="text-center z">
+          <span class="badge ${badgeClass}">
             ${guest.side.charAt(0).toUpperCase() + guest.side.slice(1)}'s Side
           </span>
         </div>

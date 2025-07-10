@@ -77,7 +77,23 @@ body {
   transition: 0.2s;
 }
 
+.badge-bride {
+  background: #ecccb2 !important;
+  color: white !important;
+}
+.badge-groom {
+  background:#a4b0b9 important;
+  color: white !important;
+}
 
+
+.result-item{
+  text-align: center;
+  font-family: 'marlet', Arial, sans-serif;
+  background-color: transparent;
+  font-size: 1.4rem;
+  border: transparent;
+}
 .search-bar-wrapper {
   position: relative;
   width: 80%;
