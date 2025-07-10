@@ -36,10 +36,9 @@ body {
 }
 
 #guestListBtn{
- color: #ebdfce;
- background-color: white;
+ color: white;
+ background-color: #797979;
  font-family: 'marlet','Segoe UI', Arial, sans-serif;
- border-color: white;
  border-radius: 20px;
 }
 
@@ -70,7 +69,7 @@ body {
   border:none;
   border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px rgb(170, 172, 158);
+  box-shadow: 0 2px 12px rgb(126, 128, 118);
   transition: 0.2s;
 }
 
