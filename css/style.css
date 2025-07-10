@@ -8,7 +8,7 @@ body {
   justify-content: center;
   /* Your existing styles... */
   /* background: linear-gradient(120deg, #f9e5ea 0%, #e5f6fa 100%); */
-  background: #ebdfce;
+  background: #fff5e4;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 .btn-bride {
-  background: #ebdfce;
+  background: #c1d8c3;
   color: white;
   font-weight: bold;
   border:none;
@@ -69,13 +69,13 @@ body {
 
 
 .btn-groom {
-  background:#c9ccb1;
+  background:#6a9c89;
   color: white; 
   font-weight: bold;
   border:none;
   border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #ebdfcec0;
+  box-shadow: 0 2px 12px #c9ccb1;
   transition: 0.2s;
 }
 .btn-groom:hover {
@@ -125,11 +125,11 @@ body {
 }
 
 #resultStep .bride {
-  background: linear-gradient(110deg, #f9e5ea 60%, #fcebf1 100%);
+  background:#c9ccb1;
 }
 
 #resultStep .groom {
-  background: linear-gradient(110deg, #e5f6fa 60%, #eafaff 100%);
+  background:#c9ccb1;
 }
 
 #resultStep h3 {
