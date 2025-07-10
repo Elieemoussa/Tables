@@ -86,7 +86,12 @@ body {
   color: white !important;
 }
 
-
+.guest-list{
+    font-family: 'marlet', Arial, sans-serif;
+}
+.guestListLabel{
+     font-family: 'marlet', Arial, sans-serif; 
+}
 .result-item{
   text-align: center;
   font-family: 'marlet', Arial, sans-serif;

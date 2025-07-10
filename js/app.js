@@ -27,10 +27,9 @@ function renderGuestList() {
   const groomGuests = guests.filter(g => g.side === 'groom').sort((a, b) => a.name.localeCompare(b.name));
   
   // HTML for each side
-  const makeList = (titleEn, titleAr, arr, color) => `
-    <div class="col-md-6">
+  const makeList = (titleEn, arr, color) => `
+    <div class="col-md-6 guest-list">
       <h6 class="fw-bold text-${color} mb-1">${titleEn}</h6>
-      <div class="small mb-2" dir="rtl" style="color:#888;">${titleAr}</div>
       <ul class="list-group list-group-flush small">
         ${arr.map(g => `<li class="list-group-item d-flex justify-content-between align-items-center py-2">
           <span>${g.name}</span>
@@ -43,8 +42,8 @@ function renderGuestList() {
   `;
 
   document.getElementById('guestListBody').innerHTML = 
-    makeList("Bride Side", "طرف العروس", brideGuests, "danger") +
-    makeList("Groom Side", "طرف العريس", groomGuests, "primary");
+    makeList("Bride Side", brideGuests, "#ecccb2") +
+    makeList("Groom Side", groomGuests, "#a4b0b9");
 }
 
 
