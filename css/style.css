@@ -59,7 +59,7 @@ body {
   border:none;
   border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #ebdfcec0;
+  box-shadow: 0 2px 12px rgb(212, 214, 197);
   transition: 0.2s;
 }
 .btn-bride:hover {
@@ -75,7 +75,7 @@ body {
   border:none;
   border-radius: 5px 40px 5px 40px;
   padding: 0.9rem 2.2rem;
-  box-shadow: 0 2px 12px #c9ccb1;
+  box-shadow: 0 2px 12px rgb(170, 172, 158);
   transition: 0.2s;
 }
 .btn-groom:hover {
@@ -96,7 +96,7 @@ body {
   font-size: 1.25rem;
   padding: 0.8rem 1rem 0.8rem 2.8rem;
   background: rgba(201, 204, 177, 0.774);
-  box-shadow: 0 2px 16px rgba(195,195,195,0.11);
+  box-shadow: 0 2px 12px rgb(170, 172, 158);
   outline: none;
   transition: box-shadow .2s;
 }
