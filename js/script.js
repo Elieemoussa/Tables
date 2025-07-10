@@ -121,9 +121,9 @@ function showResult(matches, searchVal) {
           <li class="list-group-item"><strong>Guest Count:</strong> ${guest.familyCount}</li>
         </ul>
         <div class="text-center">
-          <span class="badge bg-${guest.side === 'bride' ? 'danger' : 'primary'}">
-            ${guest.side.charAt(0).toUpperCase() + guest.side.slice(1)}'s Side
-          </span>
+        <span class="badge bg-white text-dark border">
+          ${guest.side.charAt(0).toUpperCase() + guest.side.slice(1)}'s Side
+        </span>
         </div>
       </div>
     `;
