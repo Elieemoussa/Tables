@@ -97,8 +97,8 @@ body {
 }
 
 .search-bar:focus {
-  box-shadow: 0 4px 24px #c9ccb1;
-  border: 1.5px solid #c9ccb1;
+  box-shadow: 0 4px 24px #f1f1f1;
+  border: 1.5px solid #f1f1f1;
 }
 
 .search-icon {
@@ -106,7 +106,7 @@ body {
   top: 50%;
   left: 1.05rem;
   transform: translateY(-50%);
-  color: #c9ccb1;
+  color: #f1f1f1;
   font-size: 1.3rem;
   pointer-events: none;
 }
@@ -129,8 +129,7 @@ body {
 
 #resultStep h3 {
   color: black;
- font-family: 'marlet', Arial, sans-serif;
-
+  font-family: 'marlet', Arial, sans-serif;
   font-size: 1.7rem;
   text-align: center;
   font-weight: bold;
