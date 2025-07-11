@@ -51,7 +51,7 @@ body {
  font-family: 'marlet', Arial, sans-serif;
  border-color:  white;
  border-radius: 20px;
- /* box-shadow: 0 2px 12px #797979; */
+display: none;
 
 }
 
@@ -82,7 +82,7 @@ body {
   color: white !important;
 }
 .badge-groom {
-  background:#a4b0b9 important;
+  background:#a4b0b9 !important;
   color: white !important;
 }
 
