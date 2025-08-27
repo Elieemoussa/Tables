@@ -24,27 +24,54 @@ document.getElementById('guestListBtn').addEventListener('click', function() {
 function renderGuestList() {
   // Group and sort guests
   const brideGuests = guests.filter(g => g.side === 'bride').sort((a, b) => a.name.localeCompare(b.name));
-  const groomGuests = guests.filter(g => g.side === 'groom').sort((a, b) => a.name.localeCompare(b.name));
-  
-  // HTML for each side
-  const makeList = (titleEn, arr, color) => `
+  const groomGuests = guests.filter(g => g.side === 'Groom').sort((a, b) => a.name.localeCompare(b.name));
+
+  // helper: sum familyCount safely
+  const totalPeople = arr => arr.reduce((sum, g) => sum + (Number(g.familyCount) || 0), 0);
+
+  // HTML for each side (note: color is used inline, not as a Bootstrap text-* class)
+  const makeList = (titleEn, arr, colorHex) => `
     <div class="col-md-6 guest-list">
-      <h6 class="fw-bold text-${color} mb-1">${titleEn}</h6>
+      <h6 class="fw-bold mb-2" style="color:${colorHex};">${titleEn}</h6>
       <ul class="list-group list-group-flush small">
-        ${arr.map(g => `<li class="list-group-item d-flex justify-content-between align-items-center py-2">
-          <span>${g.name}</span>
-          <span class="badge rounded-pill bg-light text-dark border" style="font-size:0.95em;">
-            Table ${g.table}
-          </span>
-        </li>`).join('')}
+        ${arr.map(g => `
+          <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+            <span>${g.name}</span>
+            <span class="badge rounded-pill bg-light text-dark border" style="font-size:0.95em;">
+              Table ${g.table}
+            </span>
+          </li>
+        `).join('')}
+        <li class="list-group-item d-flex justify-content-between align-items-center py-2 fw-semibold">
+          <span>Total People</span>
+          <span>${totalPeople(arr)}</span>
+        </li>
       </ul>
     </div>
   `;
 
-  document.getElementById('guestListBody').innerHTML = 
+  // Render both columns
+  const body = document.getElementById('guestListBody');
+  body.innerHTML =
     makeList("Bride Side", brideGuests, "#ecccb2") +
     makeList("Groom Side", groomGuests, "#a4b0b9");
+
+  // Grand totals row (full width)
+  const grandTotal = totalPeople(brideGuests) + totalPeople(groomGuests);
+  const grandEntries = brideGuests.length + groomGuests.length;
+  body.insertAdjacentHTML('beforeend', `
+    <div class="col-12 mt-3">
+      <div class="alert alert-light border d-flex justify-content-between align-items-center mb-0">
+        <div class="fw-semibold">Totals</div>
+        <div class="small">
+          <span class="me-3">Entries: <strong>${grandEntries}</strong></span>
+          <span>People: <strong>${grandTotal}</strong></span>
+        </div>
+      </div>
+    </div>
+  `);
 }
+
 
 
 

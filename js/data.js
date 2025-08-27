@@ -4,7 +4,7 @@ let selectedSide = null;
 
 // Fetch guests from JSON
 export function fetchGuests() {
-  return fetch('/cleint/final.json')
+  return fetch('/cleint/1.json')
     .then(response => response.json())
     .then(data => { guests = data; });
 }
