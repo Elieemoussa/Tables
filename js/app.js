@@ -22,12 +22,26 @@ document.getElementById('guestListBtn').addEventListener('click', function() {
 
 
 function renderGuestList() {
-  // Group and sort guests
-  const brideGuests = guests.filter(g => g.side === 'bride').sort((a, b) => a.name.localeCompare(b.name));
-  const groomGuests = guests.filter(g => g.side === 'Groom').sort((a, b) => a.name.localeCompare(b.name));
 
+  // Group and sort guests by table, then name
+  const brideGuests = guests
+    .filter(g => g.side === 'bride')
+    .sort((a, b) => a.table - b.table || a.name.localeCompare(b.name));
+
+  const groomGuests = guests
+    .filter(g => g.side === 'Groom')
+    .sort((a, b) => a.table - b.table || a.name.localeCompare(b.name));
   // helper: sum familyCount safely
   const totalPeople = arr => arr.reduce((sum, g) => sum + (Number(g.familyCount) || 0), 0);
+
+    // build per-table totals (overall, both sides)
+  const tableTotals = guests.reduce((acc, g) => {
+    const t = Number(g.table);
+    const c = Number(g.familyCount) || 0;
+    acc[t] = (acc[t] || 0) + c;
+    return acc;
+  }, {});
+  const sortedTables = Object.keys(tableTotals).map(Number).sort((a, b) => a - b);
 
   // HTML for each side (note: color is used inline, not as a Bootstrap text-* class)
   const makeList = (titleEn, arr, colorHex) => `
@@ -67,6 +81,23 @@ function renderGuestList() {
           <span class="me-3">Entries: <strong>${grandEntries}</strong></span>
           <span>People: <strong>${grandTotal}</strong></span>
         </div>
+      </div>
+    </div>
+  `);
+
+    // people per table (overall)
+  body.insertAdjacentHTML('beforeend', `
+    <div class="col-12 mt-3">
+      <h6 class="fw-bold mb-2">People per Table</h6>
+      <div class="row g-2">
+        ${sortedTables.map(t => `
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="d-flex justify-content-between align-items-center border rounded px-3 py-2">
+              <span>Table ${t}</span>
+              <span class="badge bg-light text-dark border">${tableTotals[t]}</span>
+            </div>
+          </div>
+        `).join('')}
       </div>
     </div>
   `);
