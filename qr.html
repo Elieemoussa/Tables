@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clean QR (Transparent + Download)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px}
+    .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    input[type="text"]{padding:10px 12px;width:min(520px,90vw);border:1px solid #ddd;border-radius:10px}
+    button,select{padding:10px 14px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer}
+    #qrcode{padding:16px;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.06)}
+    label{display:flex;align-items:center;gap:6px}
+  </style>
+</head>
+<body>
+  <h2>QR Code Generator (clean, rounded, transparent)</h2>
+
+  <div class="row">
+    <input id="text" type="text" placeholder="Enter a URL or any text" />
+    <select id="size">
+      <option value="200">200 px</option>
+      <option value="240" selected>240 px</option>
+      <option value="300">300 px</option>
+      <option value="400">400 px</option>
+    </select>
+    <label><input type="checkbox" id="transparent" checked /> Transparent BG</label>
+    <button id="generate">Generate</button>
+  </div>
+
+  <div id="qrcode"></div>
+
+  <div class="row">
+    <button id="downloadPng">Download PNG</button>
+    <button id="downloadSvg">Download SVG</button>
+  </div>
+
+  <!-- Library: qr-code-styling -->
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+  <script>
+    // Create the QR instance with clean rounded dots and transparent background
+    let qr = new QRCodeStyling({
+      width: 240,
+      height: 240,
+      type: "canvas",
+      data: "",
+      margin: 6,
+      qrOptions: { errorCorrectionLevel: "Q" }, // good balance for scanning + style
+      dotsOptions: { type: "rounded", color: "#000000" }, // simpler rounded edges
+      cornersSquareOptions: { type: "extra-rounded", color: "#000000" },
+      cornersDotOptions: { type: "dot", color: "#000000" },
+      backgroundOptions: { color: "transparent" } // transparent background
+    });
+
+    const target = document.getElementById("qrcode");
+    qr.append(target);
+
+    function updateQR() {
+      const text = document.getElementById("text").value.trim();
+      const size = parseInt(document.getElementById("size").value, 10);
+      const transparent = document.getElementById("transparent").checked;
+
+      if (!text) { alert("Please enter text or a URL"); return; }
+
+      // Recreate with new size (library renders sharper if re-instantiated for size change)
+      qr = new QRCodeStyling({
+        width: size,
+        height: size,
+        type: "canvas",
+        data: text,
+        margin: 6,
+        qrOptions: { errorCorrectionLevel: "Q" },
+        dotsOptions: { type: "rounded", color: "#000000" },
+        cornersSquareOptions: { type: "extra-rounded", color: "#000000" },
+        cornersDotOptions: { type: "dot", color: "#000000" },
+        backgroundOptions: { color: transparent ? "transparent" : "#ffffff" }
+      });
+
+      target.innerHTML = "";
+      qr.append(target);
+    }
+
+    document.getElementById("generate").addEventListener("click", updateQR);
+
+    document.getElementById("downloadPng").addEventListener("click", () => {
+      qr.download({ name: "qr-code", extension: "png" });
+    });
+
+    document.getElementById("downloadSvg").addEventListener("click", () => {
+      qr.download({ name: "qr-code", extension: "svg" });
+    });
+
+    // Optional: generate once with a placeholder so users see an example
+    document.getElementById("text").value = "https://eventastic.cc";
+    updateQR();
+  </script>
+</body>
+</html>
