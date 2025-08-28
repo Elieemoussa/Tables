@@ -2,7 +2,7 @@
 { "number": 1, "name": "Bassam Sarkis", "table": 1, "familyCount": 2, "side": "bride" },
 { "number": 2, "name": "William Sarkis", "table": 1, "familyCount": 3, "side": "bride" },
 { "number": 3, "name": "Elie Sarkis", "table": 1, "familyCount": 2, "side": "bride" },
-{ "number": 4, "name": "Edward Abou Antoun -1", "table": 1, "familyCount": 2, "side": "bride" },
+{ "number": 4, "name": "Edward Abou Antoun", "table": 1, "familyCount": 2, "side": "bride" },
 { "number": 5, "name": "Salam Sarkis", "table": 1, "familyCount": 1, "side": "bride" },
 { "number": 6, "name": "Joseph Obeid", "table": 2, "familyCount": 2, "side": "bride" },
 { "number": 7, "name": "George Al Rassy", "table": 2, "familyCount": 3, "side": "bride" },
@@ -43,9 +43,9 @@
 { "number": 44, "name": "Rawya Chawich", "table": 7, "familyCount": 2, "side": "bride" },
 { "number": 45, "name": "Jana Abbass", "table": 7, "familyCount": 1, "side": "bride" },
 
-{ "number": 46, "name": "Nicolas Attieh", "table": 18, "familyCount": 1, "side": "Groom" },
-{ "number": 47, "name": "Rabih Mahfoud", "table": 18, "familyCount": 1, "side": "Groom" },
-{ "number": 48, "name": "Ibrahim Halak", "table": 18, "familyCount": 1, "side": "Groom" },
+{ "number": 46, "name": "Nicolas Attieh", "table": 18, "familyCount": 1, "side": "groom" },
+{ "number": 47, "name": "Rabih Mahfoud", "table": 18, "familyCount": 1, "side": "groom" },
+{ "number": 48, "name": "Ibrahim Halak", "table": 18, "familyCount": 1, "side": "groom" },
 { "number": 49, "name": "Daniel Chahoud", "table": 18, "familyCount": 2, "side": "Groom" },
 { "number": 50, "name": "Antonio Obeid", "table": 18, "familyCount": 2, "side": "Groom" },
 
@@ -80,8 +80,8 @@
 
 { "number": 71, "name": "Hanna Ibrahim", "table": 16, "familyCount": 2, "side": "Groom" },
 { "number": 72, "name": "Elias Ibrahim", "table": 16, "familyCount": 2, "side": "Groom" },
-{ "number": 73, "name": "Deeb Ibrahim", "table": 16, "familyCount": 2, "side": "Groom" },
-{ "number": 74, "name": "Aamer Ibrahim", "table": 16, "familyCount": 2, "side": "Groom" },
+{ "number": 73, "name": "Dib Ibrahim", "table": 16, "familyCount": 2, "side": "Groom" },
+{ "number": 74, "name": "Amer Ibrahim", "table": 16, "familyCount": 2, "side": "Groom" },
 { "number": 75, "name": "Jamil Joukhadar", "table": 16, "familyCount": 2, "side": "Groom" },
 
 { "number": 76, "name": "Elias Assy", "table": 14, "familyCount": 3, "side": "Groom" },
@@ -119,6 +119,6 @@
 { "number": 100, "name": "Charly Saad", "table": 20, "familyCount": 2, "side": "Groom" },
 { "number": 101, "name": "Paul Wannous", "table": 20, "familyCount": 2, "side": "Groom" },
 { "number": 102, "name": "Toufic Toufic", "table": 20, "familyCount": 2, "side": "Groom" },
-{ "number": 103, "name": "Richard Deeb", "table": 20, "familyCount": 2, "side": "Groom" }
+{ "number": 103, "name": "Richard Dib", "table": 20, "familyCount": 2, "side": "Groom" }
 
 ]

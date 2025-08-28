@@ -29,7 +29,7 @@ function renderGuestList() {
     .sort((a, b) => a.table - b.table || a.name.localeCompare(b.name));
 
   const groomGuests = guests
-    .filter(g => g.side === 'Groom')
+    .filter(g => g.side === 'groom')
     .sort((a, b) => a.table - b.table || a.name.localeCompare(b.name));
   // helper: sum familyCount safely
   const totalPeople = arr => arr.reduce((sum, g) => sum + (Number(g.familyCount) || 0), 0);
