@@ -51,8 +51,7 @@ body {
  font-family: 'marlet', Arial, sans-serif;
  border-color:  white;
  border-radius: 20px;
-display: none;
-
+/* display: none; */
 }
 
 .btn-bride {
@@ -147,6 +146,12 @@ display: none;
 #resultStep .groom {
   background:#f1f1f1;
 }
+
+.card>.list-group {
+    border-top: inherit;
+    border-bottom: none;
+}
+
 
 #resultStep h3 {
   color: black;
@@ -244,8 +249,8 @@ display: none;
 }
 #suggestionList .list-group-item:hover,
 #suggestionList .list-group-item.active {
-  background: #f9c2d033;
-  color: #a73067;
+  background: #acacac33;
+  color: #222222;
 }
 
 
